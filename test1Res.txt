@@ -1,0 +1,5 @@
+Assignment on line 5: 1.000000
+Recognized '/' expression. Result: 2.800000
+Recognized '+' expression. Result: 3.800000
+Assignment on line 7: 3.800000
+Assignment on line 9: 1.000000
