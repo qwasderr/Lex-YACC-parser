@@ -9,9 +9,9 @@
 %option yylineno
 alpha [a-zA-Z]
 digit [0-9] 
+unary "++"|"--"
 
 %%
-
 "+" return ADD; 
 "-"  return SUB; 
 "/"  return DIV; 

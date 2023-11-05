@@ -9,8 +9,7 @@
 	#define YYSTYPE double
 	extern int yylineno;
 %}
-
-
+%start program
 %token ADD SUB DIV MULT
 %token GE LE GT LT EQ NE
 %token ASSIGN AND OR XOR
@@ -19,8 +18,6 @@
 %token INCLUDE ID NUM FLOAT_NUM
 %token SEMICOLON COMMA OP CP OB CB
 %token TRUE FALSE
-
-%start program
 %%
 
 
@@ -44,7 +41,7 @@ return: RETURN value SEMICOLON
 
 value: NUM {$$=$1;}
 | FLOAT_NUM {$$=$1;}
-| ID
+| ID {$$=$1;}
 ;
 
 
@@ -64,11 +61,13 @@ type : INT
 ;
 
 
-statement: type ID init {$2=$3; }
+statement: type id_init 
 | ID ASSIGN expression  {$1=$3; fprintf(yyout,"Assignment on line %d: %lf\n",yylineno,$3);}
 | ID op expression
 ;
-
+id_init: ID init {$1=$2; }
+| ID init COMMA id_init {$1=$2; }
+;
 op: GE
 | LE
 | GT
@@ -113,5 +112,5 @@ int yywrap() {
     return 1;
 }
 void yyerror(const char* msg) {
-    fprintf(stderr, "%s\n", msg);
+    fprintf(yyout, "line %d: %s\n", yylineno, msg);
 }

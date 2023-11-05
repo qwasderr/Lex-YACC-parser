@@ -622,10 +622,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 "lex.l"
+#line 14 "lex.l"
 
-
-#line 629 "lex.yy.c"
+#line 628 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -915,7 +914,7 @@ YY_RULE_SETUP
 #line 59 "lex.l"
 ECHO;
 	YY_BREAK
-#line 919 "lex.yy.c"
+#line 918 "lex.yy.c"
 			case YY_STATE_EOF(INITIAL):
 				yyterminate();
 

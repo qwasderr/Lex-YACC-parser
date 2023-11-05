@@ -1,0 +1,6 @@
+Recognized '*' expression. Result: 10.000000
+Assignment on line 6: 10.000000
+Recognized '*' expression. Result: 6.000000
+Recognized '+' expression. Result: 7.000000
+Assignment on line 7: 7.000000
+line 8: syntax error
